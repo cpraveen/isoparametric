@@ -1,6 +1,6 @@
 An attempt to create a MappingFEField by reading a high order mesh in Gmsh format. At present it is able to read in the mesh. 
 
-== Steps to run this code ==
+## Steps to run this code
 
 Generate a grid, this is setup to generate a Q4 grid (5x5 points in each cell)
 
@@ -18,7 +18,7 @@ make
 ./main
 ```
 
-== Ordering of dofs in ```FE_Q``` ==
+## Ordering of dofs in ```FE_Q```
 
 ```
 -----------
