@@ -135,6 +135,9 @@ void read_msh (std::istream &in, Triangulation<dim> *tria, GridData &grid_data)
    // in msh-file (nod) and in the
    // vertices vector
    std::map<int,int> vertex_indices;
+   grid_data.x.resize (n_vertices);
+   grid_data.y.resize (n_vertices);
+   grid_data.z.resize (n_vertices);
    
    for (unsigned int vertex=0; vertex<n_vertices; ++vertex)
    {
@@ -149,6 +152,10 @@ void read_msh (std::istream &in, Triangulation<dim> *tria, GridData &grid_data)
          vertices[vertex](d) = x[d];
       // store mapping
       vertex_indices[vertex_number] = vertex;
+      
+      grid_data.x[vertex] = x[0];
+      grid_data.y[vertex] = x[1];
+      grid_data.z[vertex] = x[2];
    }
    
    // Assert we reached the end of the block
